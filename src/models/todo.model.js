@@ -10,7 +10,8 @@ const Todo = db.define("todos", {
     },
     title: {
         type: DataTypes.STRING(100),
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     description: {
         type: DataTypes.TEXT,
