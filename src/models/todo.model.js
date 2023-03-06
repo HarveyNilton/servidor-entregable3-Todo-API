@@ -11,7 +11,6 @@ const Todo = db.define("todos", {
     title: {
         type: DataTypes.STRING(100),
         allowNull: false,
-        unique: true
     },
     description: {
         type: DataTypes.TEXT,
@@ -28,6 +27,10 @@ const Todo = db.define("todos", {
         type: DataTypes.INTEGER,
         allowNull: false
     },
+    subcategory_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    }
    
 },{
     timestamps:true,

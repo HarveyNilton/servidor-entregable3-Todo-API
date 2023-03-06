@@ -22,16 +22,17 @@ class UsersServices {
                 include: [{
                     model: Todo,
                     attributes: ['title', 'description', 'status'],
-                    include: {
-                        model: Category,
-                        attributes: ['name'],
-                        include: {
+
+                    include: [
+                        {
+                            model: Category,
+                            attributes: ['name']
+                        },
+                        {
                             model: subCategory,
                             attributes: ['name']
-                        }
-                    },
-                }
-                ]
+                        }   ],
+                }]
 
                 /*
                 attributes:{exclude:["updatedAt","password","email"]},

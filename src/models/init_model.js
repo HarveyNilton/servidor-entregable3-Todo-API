@@ -11,8 +11,11 @@ const initModel = () =>{
     Category.hasMany(Todo,{foreignKey:"category_id"})
     Todo.belongsTo(Category,{foreignKey:"category_id"})
 
-    subCategory.hasMany(Category,{foreignKey:"subcategory_id"})
-    Category.belongsTo(subCategory,{foreignKey:"subcategory_id"})
+    subCategory.hasMany(Todo,{foreignKey:"subcategory_id"})
+    Todo.belongsTo(subCategory,{foreignKey:"subcategory_id"})
+
+    Category.hasMany(subCategory,{foreignKey:"category_id"})
+    subCategory.belongsTo(Category,{foreignKey:"category_id"})
 
 }
 
