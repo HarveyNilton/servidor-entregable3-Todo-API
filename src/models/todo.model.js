@@ -27,10 +27,7 @@ const Todo = db.define("todos", {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    subcategory_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    }
+   
 },{
     timestamps:true,
     updatedAt:false

@@ -13,7 +13,10 @@ const Category = db.define("categories", {
         unique: true,
         allowNull: false
     },
-   
+    subcategory_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    }
 }, {
     timestamps: false
 })

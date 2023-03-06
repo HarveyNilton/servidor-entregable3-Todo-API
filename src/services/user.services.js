@@ -18,21 +18,20 @@ class UsersServices {
     static async getTodo(userId) {
         try {
             const result = await User.findByPk(userId, {
-                attributes: ['username'],
+                attributes: ['username', 'email', 'updatedAt'],
                 include: [{
                     model: Todo,
                     attributes: ['title', 'description', 'status'],
                     include: {
                         model: Category,
-                        attributes: ['name']
-                    }
-                    
-
+                        attributes: ['name'],
+                        include: {
+                            model: subCategory,
+                            attributes: ['name']
+                        }
+                    },
                 }
                 ]
-
-
-
 
                 /*
                 attributes:{exclude:["updatedAt","password","email"]},

@@ -10,6 +10,7 @@ const categoriesRouter = require('./routes/categories.router')
 const subCategoryRouter = require('./routes/sub_categories.router')
 
 
+
 const PORT = 2530
 const app = express()
 app.use(cors())
@@ -21,6 +22,7 @@ app.use(todoRouter)
 app.use(categoriesRouter)
 app.use(subCategoryRouter)
 
+
 initModel()
 
 
@@ -30,7 +32,7 @@ database.authenticate()
     })
     .catch((error) => console.log(error))
 
-database.sync({ alter: true })
+database.sync({alter: true })
     .then(() => {
         console.log("Databse Sincronizada");
     })
